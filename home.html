@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Dev</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="name">
+            <h1>Dev-114</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="showSection('home')">Home</a></li>
+                <li><a href="#about" onclick="showSection('about')">About</a></li>
+                <li><a href="#services" onclick="showSection('services')">Services</a></li>
+                <li><a href="#projects" onclick="showSection('projects')">Projects</a></li>
+                <li><a href="#contact" onclick="showSection('contact')">Contact Me</a></li>
+                <li><a href="resume_dev.pdf" target="_blank" class="resume-btn">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+   
+    <section id="home" class="section active">
+        <h2>Welcome to My <span class="highlight">Portfolio</span></h2>
+        <p class="intro-text">I am <span class="highlight">Dev</span>.</p> 
+    </section>
+
+    <section id="about" class="section">
+        <div class="aboutclass">
+            <div class="about-content">
+                <p id="homepara">
+                    I'm <span class="highlight">Dev</span>, an IT engineering student at CBIT with a strong passion for technology and innovation. My academic journey has given me a solid grounding in software development, network security, and data analysis, and I’m proficient in programming languages like Python, SQL etc.
+                    I enjoy collaborating on projects and staying updated with the latest industry trends. I’m particularly interested in exploring careers in software development, cybersecurity, and data science.
+                    Outside of my studies, I’m enthusiastic about tech gadgets, photography, and the latest technologies. I’m always eager to learn and connect with others who share my passion for technology.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="services" class="section">
+        <h2>Services</h2>
+        <div class="serviceclass">
+            <div class="service-item">
+                <h3>UI/UX</h3>
+                <p>Providing introductory UI/UX design for your websites</p>
+            </div>
+            <div class="service-item">
+                <h3>Web Development</h3>
+                <p>Offering beginner to intermediate web development services</p>
+            </div>
+        </div>
+    </section>  
+
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projectclass">
+            <div class="project-item">
+                <h3>Real-Estate Management Website</h3>
+                <p>Website that helps you to find/sell properties</p>
+                <img src="real_estate.png" alt="Real Estate Management Website">
+            </div>
+            <div class="project-item">
+                <h3>Password Generator</h3>
+                <p>Helps you to generate strong passwords</p>
+                <img src="password.png" alt="Password Generator">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <div class="contactform">
+            <form id="contact-form">
+                <h3>Fill this to contact me</h3>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+    
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Dev. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId){
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            // Show the selected section
+            const activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('home'); // Show the home section by default
+
+            // Smooth scrolling for links
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const sectionId = e.target.getAttribute('href').substring(1);
+                    showSection(sectionId);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
