@@ -107,15 +107,6 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             showSection('home'); // Show the home section by default
-
-            // Smooth scrolling for links
-            document.querySelectorAll('nav a').forEach(anchor => {
-                anchor.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const sectionId = e.target.getAttribute('href').substring(1);
-                    showSection(sectionId);
-                });
-            });
         });
     </script>
 </body>
