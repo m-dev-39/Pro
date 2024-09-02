@@ -1,0 +1,234 @@
+/* General styles */
+:root {
+    --primary-color: rgb(35, 191, 202);
+    --secondary-color: #333;
+    --button-bg-color: rgba(25, 129, 189, 0.762);
+    --button-hover-bg-color: #1e88e5;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background-color: black;
+}
+
+/* Header styles */
+header {
+    background: var(--secondary-color);
+    color: #fff;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Name on the left */
+header .name h1 {
+    margin: 0;
+}
+
+/* Navigation styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+    margin-left: auto;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Section styles */
+.section {
+    display: none;
+    padding: 50px 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer styles */
+footer {
+    background: var(--secondary-color);
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Typography and content styles */
+.highlight {
+    color: var(--primary-color);
+}
+
+.intro-text {
+    font-size: 72px;
+    font-weight: bold;
+}
+
+#homepara {
+    margin-left: 10px;
+    font-size: 2.0em;
+    line-height: 1.5;
+    text-align: center;
+}
+
+h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+/* Contact form styles */
+.contactform {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 450px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #888;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: var(--button-bg-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px 0;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg-color);
+    transform: scale(1.05);
+}
+
+/* Image styles */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Service and project layout */
+.serviceclass, .projectclass {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.project-item, .service-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/* Resume link/button styles */
+.resume-btn {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    background-color: var(--button-bg-color);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.resume-btn:hover {
+    background-color: var(--button-hover-bg-color);
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #homepara {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    .aboutclass, .serviceclass, .projectclass {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #contact-form {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    input, textarea {
+        width: 100%;
+    }
+}
